@@ -4,12 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProductTranslation extends Model
+class Translation extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'key',
+        'language_code',
+        'value'
+    ];
     
-    public function product()
+    // Helper method to get translation by key and language
+    public static function get($key, $languageCode = 'en')
     {
-        return $this->belongsTo(Product::class);
+        $translation = self::where('key', $key)
+            ->where('language_code', $languageCode)
+            ->first();
+            
+        return $translation ? $translation->value : $key;
     }
 }

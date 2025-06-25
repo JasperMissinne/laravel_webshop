@@ -10,14 +10,12 @@ return new class extends Migration
     {
         Schema::create('translations', function (Blueprint $table) {
             $table->id();
-            $table->string('key'); // e.g., 'nav.home', 'button.add_to_cart'
-            $table->foreignId('language_id')->constrained()->onDelete('cascade');
+            $table->string('key');
+            $table->string('language_code'); // 'en', 'nl'
             $table->text('value');
-            //$table->string('group')->default('general'); // general, navigation, forms, etc.
             $table->timestamps();
             
-            $table->unique(['key', 'language_id']);
-            $table->index(['key', 'group']);
+            $table->unique(['key', 'language_code']);
         });
     }
 
