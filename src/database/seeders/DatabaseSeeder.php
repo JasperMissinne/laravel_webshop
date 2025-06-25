@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Page;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 
@@ -10,22 +9,6 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        // Create or update pages with translations
-        $homePage = Page::updateOrCreate(
-            ['key' => 'home'],
-            ['key' => 'home']
-        );
-        
-        $homePage->translations()->updateOrCreate(
-            ['locale' => 'en'],
-            ['content' => 'Welcome to our shop!']
-        );
-        
-        $homePage->translations()->updateOrCreate(
-            ['locale' => 'fr'],
-            ['content' => 'Bienvenue dans notre boutique!']
-        );
-        
         // Create sample products
         $product1 = Product::updateOrCreate(
             ['image' => 'product1.jpg'],
@@ -41,10 +24,10 @@ class DatabaseSeeder extends Seeder
         );
         
         $product1->translations()->updateOrCreate(
-            ['locale' => 'fr'],
+            ['locale' => 'nl'],
             [
-                'name' => 'Produit Exemple',
-                'description' => 'C\'est un excellent produit'
+                'name' => 'Product Voorbeeld',
+                'description' => 'Dit is een geweldig product'
             ]
         );
         
@@ -62,10 +45,10 @@ class DatabaseSeeder extends Seeder
         );
         
         $product2->translations()->updateOrCreate(
-            ['locale' => 'fr'],
+            ['locale' => 'nl'],
             [
-                'name' => 'Produit Premium',
-                'description' => 'Notre article le plus vendu'
+                'name' => 'Premium Product',
+                'description' => 'Ons best verkochte artikel'
             ]
         );
     }
