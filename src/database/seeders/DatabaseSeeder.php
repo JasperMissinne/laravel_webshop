@@ -11,6 +11,10 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
+        $this->call([
+            ProductSeeder::class
+        ]);
+
         // Create UI translations
         $uiTranslations = [
             'our_products' => [
@@ -58,47 +62,6 @@ class DatabaseSeeder extends Seeder
         $homePage->translations()->updateOrCreate(
             ['locale' => 'nl'],
             ['content' => 'Welkom in onze winkel!']
-        );
-        
-        // Create sample products
-        $product1 = Product::updateOrCreate(
-            ['price' => 19.99]
-        );
-        
-        $product1->translations()->updateOrCreate(
-            ['locale' => 'en'],
-            [
-                'name' => 'Example Product',
-                'description' => 'This is a great product'
-            ]
-        );
-        
-        $product1->translations()->updateOrCreate(
-            ['locale' => 'nl'],
-            [
-                'name' => 'Voorbeeld Product',
-                'description' => 'Dit is een geweldig product'
-            ]
-        );
-        
-        $product2 = Product::updateOrCreate(
-            ['price' => 29.99]
-        );
-        
-        $product2->translations()->updateOrCreate(
-            ['locale' => 'en'],
-            [
-                'name' => 'Premium Product',
-                'description' => 'Our best selling item'
-            ]
-        );
-        
-        $product2->translations()->updateOrCreate(
-            ['locale' => 'nl'],
-            [
-                'name' => 'Premium Product',
-                'description' => 'Ons best verkopende artikel'
-            ]
         );
     }
 }
