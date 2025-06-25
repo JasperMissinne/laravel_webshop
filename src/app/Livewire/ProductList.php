@@ -10,28 +10,30 @@ class ProductList extends Component
 {
     public $products;
     public $currentLanguage = 'en';
+
+    protected $listeners = ['languageChanged' => 'handleLanguageChange'];
     
     public function mount()
     {
         $this->loadProducts();
     }
-    
-    public function switchLanguage($language)
+
+    public function handleLanguageChange($language)
     {
         $this->currentLanguage = $language;
         $this->loadProducts();
     }
     
-    private function loadProducts()
+    public function getTranslation($key)
+    {
+        return Translation::get($key, $this->currentLanguage);
+    }
+    
+    public function loadProducts()
     {
         $this->products = Product::with(['translations' => function($query) {
             $query->where('locale', $this->currentLanguage);
         }])->get();
-    }
-    
-    public function getTranslation($key)
-    {
-        return Translation::get($key, $this->currentLanguage);
     }
     
     public function render()

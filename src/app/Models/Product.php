@@ -16,23 +16,18 @@ class Product extends Model
         return $this->hasMany(ProductTranslation::class);
     }
     
-    // Helper method to get translation for current locale
     public function getTranslation($locale = 'en')
     {
         return $this->translations()->where('locale', $locale)->first();
     }
     
-    // Helper method to get name in specific locale
-    public function getName($locale = 'en')
+    public function getName($locale)
     {
-        $translation = $this->getTranslation($locale);
-        return $translation ? $translation->name : 'No name';
+        return $this->translations->where('locale', $locale)->first()->name ?? $this->name;
     }
-    
-    // Helper method to get description in specific locale
-    public function getDescription($locale = 'en')
+
+    public function getDescription($locale)
     {
-        $translation = $this->getTranslation($locale);
-        return $translation ? $translation->description : 'No description';
+        return $this->translations->where('locale', $locale)->first()->description ?? $this->description;
     }
 }
