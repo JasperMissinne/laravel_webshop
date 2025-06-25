@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Counter;
+use App\Livewire\ProductList;
 
-Route::get('/', Counter::class);
+// Change from Counter to ProductList
+Route::get('/', ProductList::class);
