@@ -4,15 +4,19 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use App\Models\CartItem;
-use Illuminate\Support\Facades\Auth;
+use Livewire\Attributes\On; 
 
 class CartCounter extends Component
 {
-    protected $listeners = ['cartUpdated' => 'render'];
-
+    #[On('cartUpdated')] 
     public function render()
     {
         $count = CartItem::where('session_id', session()->getId())->count();
         return view('livewire.cart-counter', ['count' => $count]);
+    }
+    
+    public function redirectToCart()
+    {
+        return $this->redirect(route('cart'), navigate: true);
     }
 }
