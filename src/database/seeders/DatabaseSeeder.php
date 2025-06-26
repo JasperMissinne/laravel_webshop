@@ -27,7 +27,7 @@ class DatabaseSeeder extends Seeder
             ],
             'add_to_cart' => [
                 'en' => 'Add to Cart',
-                'nl' => 'Toevoegen aan winkelwagen'
+                'nl' => 'In winkelwagen'
             ],
             'no_products' => [
                 'en' => 'No products found',

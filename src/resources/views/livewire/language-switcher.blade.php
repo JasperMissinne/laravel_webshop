@@ -1,4 +1,4 @@
-<div class="flex justify-end mb-6">
+<div class="flex justify-end">
     <div class="bg-white rounded-lg shadow p-2 flex space-x-2">
         <button 
             wire:click="switchLanguage('en')" 
