@@ -107,6 +107,59 @@ class UITranslationSeeder extends Seeder
             'registration_successful' => [
                 'en' => 'Registration completed successfully!',
                 'nl' => 'Registratie succesvol voltooid!'
+            ],
+            // Validation messages
+            'first_name_required' => [
+                'en' => 'First name is required',
+                'nl' => 'Voornaam is verplicht'
+            ],
+            'first_name_min' => [
+                'en' => 'First name must be at least 2 characters',
+                'nl' => 'Voornaam moet minimaal 2 karakters bevatten'
+            ],
+            'first_name_max' => [
+                'en' => 'First name cannot exceed 50 characters',
+                'nl' => 'Voornaam mag niet meer dan 50 karakters bevatten'
+            ],
+            'last_name_required' => [
+                'en' => 'Last name is required',
+                'nl' => 'Achternaam is verplicht'
+            ],
+            'last_name_min' => [
+                'en' => 'Last name must be at least 2 characters',
+                'nl' => 'Achternaam moet minimaal 2 karakters bevatten'
+            ],
+            'last_name_max' => [
+                'en' => 'Last name cannot exceed 50 characters',
+                'nl' => 'Achternaam mag niet meer dan 50 karakters bevatten'
+            ],
+            'email_required' => [
+                'en' => 'Email address is required',
+                'nl' => 'E-mailadres is verplicht'
+            ],
+            'email_invalid' => [
+                'en' => 'Please enter a valid email address',
+                'nl' => 'Voer een geldig e-mailadres in'
+            ],
+            'email_max' => [
+                'en' => 'Email address cannot exceed 100 characters',
+                'nl' => 'E-mailadres mag niet meer dan 100 karakters bevatten'
+            ],
+            'address_required' => [
+                'en' => 'Address is required',
+                'nl' => 'Adres is verplicht'
+            ],
+            'address_min' => [
+                'en' => 'Address must be at least 10 characters',
+                'nl' => 'Adres moet minimaal 10 karakters bevatten'
+            ],
+            'address_max' => [
+                'en' => 'Address cannot exceed 255 characters',
+                'nl' => 'Adres mag niet meer dan 255 karakters bevatten'
+            ],
+            'processing' => [
+                'en' => 'Processing',
+                'nl' => 'Verwerken'
             ]
         ];
         
