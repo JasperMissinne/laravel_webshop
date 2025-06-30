@@ -56,7 +56,7 @@
                         
                         <!-- Action Buttons -->
                         <div class="flex space-x-4">
-                            <button class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition-colors duration-200">
+                            <button wire:click="continueShopping" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 px-6 py-3 rounded-lg font-medium transition-colors duration-200">
                                 {{ $this->getTranslation('continue_shopping') }}
                             </button>
                             
@@ -81,7 +81,7 @@
                         {{ $this->getTranslation('cart_empty_message') }}
                     </p>
                     
-                    <button class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200">
+                    <button wire:click="continueShopping" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200">
                         {{ $this->getTranslation('continue_shopping') }}
                     </button>
                 </div>

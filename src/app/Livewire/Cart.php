@@ -28,6 +28,11 @@ class Cart extends Component
         return Translation::get($key, $this->currentLanguage);
     }
 
+    public function continueShopping()
+    {
+        return redirect()->to('/');
+    }
+
     public function getTotal()
     {
         return CartItem::with('product')
