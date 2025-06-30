@@ -8,9 +8,15 @@ class LanguageSwitcher extends Component
 {
     public $currentLanguage = 'en';
 
+    public function mount()
+    {
+        $this->currentLanguage = session('language', 'en');
+    }
+
     public function switchLanguage($language)
     {
         $this->currentLanguage = $language;
+        session(['language' => $language]);
         $this->dispatch('languageChanged', language: $language);
     }
 

@@ -14,13 +14,13 @@ class Cart extends Component
 
     public function mount()
     {
-        // You might want to get the current language from session or other source
         $this->currentLanguage = session('language', 'en');
     }
 
     public function handleLanguageChange($language)
     {
         $this->currentLanguage = $language;
+        session(['language' => $language]);
     }
 
     public function getTranslation($key)

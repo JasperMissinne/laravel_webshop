@@ -18,12 +18,14 @@ class ProductList extends Component
     public function mount()
     {
         $this->sessionId = session()->getId();
+        $this->currentLanguage = session('language', 'en');
         $this->loadProducts();
     }
 
     public function handleLanguageChange($language)
     {
         $this->currentLanguage = $language;
+        session(['language' => $language]);
         $this->loadProducts();
     }
     
