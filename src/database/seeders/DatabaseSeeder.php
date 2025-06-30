@@ -65,6 +65,55 @@ class DatabaseSeeder extends Seeder
             'checkout' => [
                 'en' => 'Checkout',
                 'nl' => 'Afrekenen'
+            ],
+            // Registration page translations
+            'registration_title' => [
+                'en' => 'Complete Your Registration',
+                'nl' => 'Voltooi Uw Registratie'
+            ],
+            'registration_subtitle' => [
+                'en' => 'Please fill in your details to complete your order',
+                'nl' => 'Vul uw gegevens in om uw bestelling te voltooien'
+            ],
+            'first_name' => [
+                'en' => 'First Name',
+                'nl' => 'Voornaam'
+            ],
+            'last_name' => [
+                'en' => 'Last Name',
+                'nl' => 'Achternaam'
+            ],
+            'email_address' => [
+                'en' => 'Email Address',
+                'nl' => 'E-mailadres'
+            ],
+            'address' => [
+                'en' => 'Address',
+                'nl' => 'Adres'
+            ],
+            'first_name_placeholder' => [
+                'en' => 'Enter your first name',
+                'nl' => 'Voer uw voornaam in'
+            ],
+            'last_name_placeholder' => [
+                'en' => 'Enter your last name',
+                'nl' => 'Voer uw achternaam in'
+            ],
+            'email_placeholder' => [
+                'en' => 'Enter your email address',
+                'nl' => 'Voer uw e-mailadres in'
+            ],
+            'address_placeholder' => [
+                'en' => 'Enter your full address',
+                'nl' => 'Voer uw volledige adres in'
+            ],
+            'complete_registration' => [
+                'en' => 'Complete Registration',
+                'nl' => 'Registratie Voltooien'
+            ],
+            'registration_successful' => [
+                'en' => 'Registration completed successfully!',
+                'nl' => 'Registratie succesvol voltooid!'
             ]
         ];
         

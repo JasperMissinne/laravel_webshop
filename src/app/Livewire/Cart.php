@@ -43,6 +43,11 @@ class Cart extends Component
             });
     }
 
+    public function checkout()
+    {
+        return redirect()->to('/registration');
+    }
+
     public function render()
     {
         $items = CartItem::with('product')
